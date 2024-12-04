@@ -16,8 +16,6 @@ const obterRelatorios = async (req, res) => {
     }
 };
 
-<<<<<<< HEAD
-=======
 // Função para obter um relatório específico por ID
 const obterRelatorioPorId = async (req, res) => {
     try {
@@ -39,7 +37,6 @@ const obterRelatorioPorId = async (req, res) => {
     }
 };
 
->>>>>>> origin/relatorio
 // Função para gerar relatório de produtos com baixo estoque
 const relatorioBaixoEstoque = async (req, res) => {
     try {
@@ -57,11 +54,7 @@ const relatorioBaixoEstoque = async (req, res) => {
         // Verificar se já existe um relatório do tipo 'baixo_estoque'
         const relatorioExistente = await Relatorios.findOne({
             where: {
-<<<<<<< HEAD
-                tipo: 'baixo_estoque',
-=======
                 tipo: { [Op.eq]: 'baixo-estoque' },
->>>>>>> origin/relatorio
             },
         });
 
@@ -74,11 +67,7 @@ const relatorioBaixoEstoque = async (req, res) => {
             // Criar um novo relatório
             const relatorio = await Relatorios.create({
                 nome: 'Produtos com Baixo Estoque',
-<<<<<<< HEAD
-                tipo: 'baixo_estoque',
-=======
                 tipo: 'baixo-estoque',
->>>>>>> origin/relatorio
                 dados: BaixoEstoque,
             });
             return res.status(200).json(relatorio);
@@ -89,8 +78,6 @@ const relatorioBaixoEstoque = async (req, res) => {
     }
 };
 
-<<<<<<< HEAD
-=======
 const relatorioConsumoMedioId = async (req, res) => {
     try {
         const { id } = req.params; // Obtém o ID do cliente da rota
@@ -255,7 +242,6 @@ const relatorioProdutosCliente = async (req, res) => {
     }
 };
 
->>>>>>> origin/relatorio
 // Função para deletar relatório
 const deletarRelatorio = async (req, res) => {
     try {
@@ -276,11 +262,6 @@ const deletarRelatorio = async (req, res) => {
 };
 
 module.exports = {
-<<<<<<< HEAD
-    relatorioBaixoEstoque,
-    deletarRelatorio,
-    obterRelatorios,
-=======
     relatorioProdutosCliente,
     relatorioConsumoMedio,
     relatorioConsumoMedioId,
@@ -288,5 +269,4 @@ module.exports = {
     deletarRelatorio,
     obterRelatorios,
     obterRelatorioPorId,
->>>>>>> origin/relatorio
 };

@@ -9,8 +9,6 @@ router.get('/', relatorioController.obterRelatorios);
 // Rota para gerar o relatório de produtos com baixo estoque
 router.get('/baixo-estoque', relatorioController.relatorioBaixoEstoque);
 
-<<<<<<< HEAD
-=======
 // Rotas para gerar o relatório de produtos com Consumo Medio
 router.get('/consumo-medio', relatorioController.relatorioConsumoMedio);
 router.get('/consumo-medio/:id', relatorioController.relatorioConsumoMedioId);
@@ -23,7 +21,6 @@ router.get('/produto-cliente/:id', relatorioController.relatorioProdutosCliente)
 // Rota para obter um relatório específico por ID
 router.get('/:id', relatorioController.obterRelatorioPorId); 
 
->>>>>>> origin/relatorio
 // Rota para deletar relatório por ID
 router.delete('/:id', relatorioController.deletarRelatorio);
 
